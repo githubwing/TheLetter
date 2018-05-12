@@ -220,4 +220,9 @@ npm install -g gulp
 
 欢迎star，如果你想来交流区块链技术，可以加qq群：615075629
 
+参考文章：
+[五一大礼包：手把手教你一小时开发DApp，千万奖金等你拿](https://mp.weixin.qq.com/s?__biz=MzU2MTI5OTI3MA==&mid=2247484524&idx=1&sn=47c6d77db96b826c76d3ff2b8fe3b3e3&chksm=fc7bae45cb0c2753b68b7e027aab411b0fbbca92469760b2ddbfeba1f0cdaeca3ca012564f48&scene=38#wechat_redirect)
+
+[https://github.com/nebulasio/wiki](https://github.com/nebulasio/wiki)
+
 
