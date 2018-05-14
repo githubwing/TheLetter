@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-var LetterItem = function(text){
-    if(text){
+let LetterItem = function (text) {
+    if (text) {
         var obj = JSON.parse(text);
         this.title = obj.title;
         this.content = obj.content;
@@ -15,7 +15,7 @@ LetterItem.prototype = {
     }
 };
 
-var TheLetter = function () {
+let BlackCompanyList = function () {
     LocalContractStorage.defineMapProperty(this, "data", {
         parse: function (text) {
             return new LetterItem(text);
@@ -26,7 +26,7 @@ var TheLetter = function () {
     });
 };
 
-TheLetter.prototype ={
+BlackCompanyList.prototype ={
     init:function(){
         
     },
@@ -60,6 +60,6 @@ TheLetter.prototype ={
         }
         return this.data.get(title);
     }
-}
+};
 
-module.exports = TheLetter;
+module.exports = BlackCompanyList;
