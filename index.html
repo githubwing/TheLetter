@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Blacklist Company 互联网公司黑名单目录</title>
+    <title>小小公开信</title>
     <meta charset="UTF-8">
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -15,66 +15,49 @@
 
     <script type="text/javascript" src="./dist/nebPay.js"></script>
     <script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">互联网公司黑名单目录</a>
-        </div>
-    </nav>
 
-    <div class="row"></div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div style="text-align: center">
+                    <h1>小小公开信</h1>
+                </div>
 
-    <div class="row">
-
-            <div class="row">
-                <div class="col s12">
-                    <div class="input-field inline">
-                        <input type="text" class="form-control" placeholder="请输入公司名称" id="search_title" />
-                        <label for="search_title">查询公司</label>
-                        <button class="btn btn-info btn-search" id=search>查找</button>
+                <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                 <span class="label">分隔符</span>
+                                <div class="list-group">
+                                    <a class="list-group-item active">查询公开信</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                <div class="input-group col-md-3" style="margin-top:20p;margin-left:20px">
+                    <input type="text" class="form-control" placeholder="请输入信件名称" id=search_title />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-search" id=search>查找</button>
+
+                    </span>
+                </div>
+
+
+
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12 column">
                 </div>
             </div>
-
-
-
-
-        <!--<div class="row clearfix">-->
-            <!--<div class="col-md-12 column">-->
-                <!--<div class="container-fluid">-->
-                        <!--<div class="row-fluid">-->
-                            <!--<div class="span12">-->
-                                 <!--<span class="label">分隔符</span>-->
-                                <!--<div class="list-group">-->
-                                    <!--<a class="list-group-item active">查询公开信</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-                <!--<div class="input-group col-md-3" style="margin-top:20p;margin-left:20px">-->
-                    <!--<input type="text" class="form-control" placeholder="请输入公司名称" id=search_title />-->
-                    <!--<span class="input-group-btn">-->
-                        <!--<button class="btn btn-info btn-search" id=search>查找</button>-->
-                    <!--</span>-->
-                <!--</div>-->
-
-            <!--</div>-->
-            <!--<div class="row clearfix">-->
-                <!--<div class="col-md-12 column">-->
-                <!--</div>-->
-            <!--</div>-->
 
             <div style="text-align: center">
                 <h1 id=title></h1>
             </div>
 
-            <div id=content style="margin-left:20px">fsddfadfsfdf</div>
+            <div id=content style="margin-left:20px"></div>
 
             <div id=author style="text-align: right"></div>
 
@@ -107,28 +90,35 @@
         </div>
 </body>
 
+
+
+
+
+
+
 <script>
     "use strict";
     var dappContactAddress = "n1ov7Z5oix23riQKUaVensFie5Tr5UiGmBT";
     var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
-    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
+    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
 
-    let NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
-    let nebPay = new NebPay();
-    let serialNumber;
+
+    var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
+    var nebPay = new NebPay();
+    var serialNumber
 
     $("#search").click(function () {
         if (!$("#search_title").val()) {
-            alert('公司名称不能为空');
+            alter('搜索标题不能为空');
             return;
         }
 
         $('#content').text("");
-        var from = dappContactAddress;
+        var from = dappContactAddress
         var value = "0";
-        var nonce = "0";
-        var gas_price = "1000000";
-        var gas_limit = "2000000";
+        var nonce = "0"
+        var gas_price = "1000000"
+        var gas_limit = "2000000"
         var callFunction = "get";
         var callArgs = "[\"" + $("#search_title").val() + "\"]";
         console.log(callArgs);
